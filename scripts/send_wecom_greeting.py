@@ -11,10 +11,12 @@ import sys
 import urllib.error
 import urllib.request
 from pathlib import Path
+from zoneinfo import ZoneInfo
 
 
 ROOT = Path(__file__).resolve().parents[1]
 ENV_FILE = ROOT / ".env"
+SHANGHAI = ZoneInfo("Asia/Shanghai")
 
 
 def load_dotenv(path: Path) -> None:
@@ -75,7 +77,7 @@ def main(argv: list[str]) -> int:
     load_dotenv(ENV_FILE)
     args = parse_args(argv)
 
-    content = args.message or default_message(dt.datetime.now())
+    content = args.message or default_message(dt.datetime.now(SHANGHAI))
     webhook = args.webhook or os.environ.get("WECOM_WEBHOOK")
 
     payload = {"msgtype": "text", "text": {"content": content}}
