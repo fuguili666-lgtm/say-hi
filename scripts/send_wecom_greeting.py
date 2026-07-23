@@ -36,7 +36,7 @@ def load_dotenv(path: Path) -> None:
 def default_message(now: dt.datetime) -> str:
     weekday_names = ["星期一", "星期二", "星期三", "星期四", "星期五", "星期六", "星期日"]
     weekday = weekday_names[now.weekday()]
-    return f"早上好，今天是 {now:%Y-%m-%d} {weekday}。愿今天顺利、清醒、有进展。via github"
+    return f"早上好，今天是 {now:%Y-%m-%d} {weekday}。世间万事，骤雨不终日，飘风不终朝。via github"
 
 
 def send_wecom_text(webhook: str, content: str, timeout: float) -> dict[str, object]:
