@@ -46,7 +46,7 @@ Configure the repository secret:
 3. Add a repository secret named `WECOM_WEBHOOK`.
 4. Set the value to the Enterprise WeChat bot webhook URL.
 
-The workflow runs every day at `01:30` Asia/Shanghai time. The workflow file uses a timezone-aware schedule, so GitHub handles the time zone directly.
+The workflow runs every day at `01:40` Asia/Shanghai time. GitHub Actions cron expressions use UTC, so the workflow file uses `40 17 * * *`.
 
 You can also run it manually from GitHub:
 
