@@ -2,8 +2,8 @@ name: Daily WeCom Greeting
 
 on:
   schedule:
-    # GitHub Actions cron uses UTC. 05:27 UTC is 13:27 in Asia/Shanghai.
-    - cron: "27 5 * * *"
+    # GitHub Actions cron uses UTC. 05:47 UTC is 13:47 in Asia/Shanghai.
+    - cron: "47 5 * * *"
   workflow_dispatch:
 
 jobs:
