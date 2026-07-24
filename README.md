@@ -53,3 +53,14 @@ You can also run it manually from GitHub:
 1. Open `Actions`.
 2. Select `Daily WeCom Greeting`.
 3. Click `Run workflow`.
+
+## Tencent Cloud SCF
+
+Use Tencent Cloud SCF for reliable daily scheduling. Deploy this repository as the function code and configure:
+
+- Runtime: Python 3.9 or newer
+- Handler: `index.main_handler`
+- Environment variable: `WECOM_WEBHOOK`
+- Timer trigger cron: `0 47 14 * * * *`
+
+The timer cron above uses Tencent Cloud SCF's 7-field format: second, minute, hour, day, month, week, year. It runs daily at `14:47` Asia/Shanghai time.
